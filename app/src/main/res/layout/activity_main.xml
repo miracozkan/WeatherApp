@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
+
+    <LinearLayout
+            android:id="@+id/lnrTop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:id="@+id/imgTopIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:minWidth="140dp"
+                android:minHeight="140dp"
+                android:padding="48dp"
+                tools:background="@drawable/ic_iconfinder_weather_few_clouds"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/txtDegree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="80sp"
+                    android:textStyle="normal"
+                    android:textColor="#eceff1"
+                    tools:text="17°"/>
+
+            <TextView
+                    android:id="@+id/txtDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20.7sp"
+                    android:textStyle="bold"
+                    android:textColor="#eceff1"
+                    tools:text="Windy  Storm"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp">
+
+            <TextView
+                    style="@style/txtHour"
+                    android:id="@+id/txtHour"
+                    tools:text="04:00 PM"/>
+
+            <TextView
+                    style="@style/txtBottomDegree"
+                    android:id="@+id/txtBotDeggre"
+                    tools:text="18°"/>
+
+            <ImageView
+                    style="@style/imgBottomIcon"
+                    android:id="@+id/imgBotIcon"
+                    tools:background="@drawable/ic_iconfinder_weather_showers_scattered"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp">
+
+            <TextView
+                    android:id="@+id/txtHour1"
+                    style="@style/txtHour"
+                    tools:text="04:00 PM"/>
+
+            <TextView
+                    android:id="@+id/txtBotDeggre1"
+                    style="@style/txtBottomDegree"
+                    tools:text="18°"/>
+
+            <ImageView
+                    style="@style/imgBottomIcon"
+                    android:id="@+id/imgBotIcon1"
+                    tools:background="@drawable/ic_iconfinder_weather_showers_scattered"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp">
+
+            <TextView
+                    android:id="@+id/txtHour2"
+                    style="@style/txtHour"
+                    tools:text="04:00 PM"/>
+
+            <TextView
+                    android:id="@+id/txtBotDeggre2"
+                    tools:text="18°"
+                    style="@style/txtBottomDegree"/>
+
+            <ImageView
+                    style="@style/imgBottomIcon"
+                    android:id="@+id/imgBotIcon2"
+                    tools:background="@drawable/ic_iconfinder_weather_showers_scattered"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
