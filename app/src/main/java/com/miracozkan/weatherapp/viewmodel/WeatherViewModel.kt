@@ -3,6 +3,7 @@ package com.miracozkan.weatherapp.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.miracozkan.weatherapp.datalayer.model.ListItem
+import com.miracozkan.weatherapp.datalayer.network.response.WeatherResponseByCityName
 import com.miracozkan.weatherapp.datalayer.repository.WeatherRepository
 
 
@@ -19,4 +20,5 @@ import com.miracozkan.weatherapp.datalayer.repository.WeatherRepository
 class WeatherViewModel(weatherRepository: WeatherRepository) : ViewModel() {
 
     val weather: MutableLiveData<List<ListItem>> = weatherRepository.weather
+    val allData: MutableLiveData<WeatherResponseByCityName> = weatherRepository.allData
 }

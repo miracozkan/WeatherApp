@@ -27,7 +27,7 @@ class WeatherListViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
 
     fun bind(weatherResponse: ListItem) {
         txtHour.text = weatherResponse.dtTxt.substring(11, 16)
-        txtBotDegree.text = (weatherResponse.main.temp.toDouble() - 273.15).toInt().toString()
+        txtBotDegree.text = (weatherResponse.main.temp - 273.15).toInt().toString()
         when (weatherResponse.weather[0].main) {
             "Rain" -> {
                 imgbButton.setBackgroundResource(R.drawable.ic_iconfinder_weather_storm)

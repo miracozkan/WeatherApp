@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <Transition
+            app:constraintSetStart="@id/start"
+            app:constraintSetEnd="@id/end"
+            app:duration="1000">
+        <OnSwipe
+                app:touchAnchorId="@id/recycWeatherList"
+                app:touchAnchorSide="top"
+                app:dragDirection="dragUp"/>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@id/background">
+            <PropertySet app:alpha="0"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint android:id="@id/lnrTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"/>
+
+
+        <Constraint android:id="@id/background">
+            <PropertySet app:alpha="1"/>
+        </Constraint>
+
+
+    </ConstraintSet>
+
+</MotionScene>

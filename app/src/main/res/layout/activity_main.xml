@@ -1,36 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:background="@drawable/bg_image_day"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                      xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                      xmlns:tools="http://schemas.android.com/tools"
+                                                      android:id="@+id/container"
+                                                      android:layout_width="match_parent"
+                                                      android:layout_height="match_parent"
+                                                      android:background="@drawable/bg_image_day"
+                                                      android:orientation="vertical"
+                                                      app:layoutDescription="@xml/motion_scene"
+                                                      app:showPaths="false">
+
+    <View
+            android:id="@+id/background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="@id/space"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
             android:id="@+id/lnrTop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:minHeight="360dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/container">
 
         <ImageView
                 android:id="@+id/imgTopIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:minWidth="80dp"
-                android:minHeight="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:contentDescription="@string/icon_of_weather"
+                android:minWidth="160dp"
+                android:minHeight="160dp"
                 android:padding="48dp"
-                tools:background="@drawable/ic_iconfinder_weather_few_clouds"
-                android:contentDescription="@string/icon_of_weather"/>
+                tools:background="@drawable/ic_iconfinder_weather_few_clouds"/>
 
         <LinearLayout
+                android:id="@+id/lnrBot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -38,29 +58,39 @@
                     android:id="@+id/txtDegree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#455a65"
                     android:textSize="80sp"
                     android:textStyle="normal"
-                    android:textColor="#455a65"
                     tools:text="17°"/>
 
             <TextView
                     android:id="@+id/txtDes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#455a65"
                     android:textSize="20.7sp"
                     android:textStyle="bold"
-                    android:textColor="#455a65"
                     tools:text="Windy  Storm"/>
+
         </LinearLayout>
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-            android:background="#CCFFFFFF"
-            android:layout_weight="0.7"
             android:id="@+id/recycWeatherList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lnrTop"/>
 
-</LinearLayout>
+    <Space
+            android:id="@+id/space"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            app:layout_constraintEnd_toEndOf="@id/lnrTop"
+            app:layout_constraintStart_toEndOf="@id/lnrTop"
+            app:layout_constraintStart_toStartOf="@id/lnrTop"
+            app:layout_constraintTop_toBottomOf="@id/lnrTop"/>
+</androidx.constraintlayout.motion.widget.MotionLayout>
 

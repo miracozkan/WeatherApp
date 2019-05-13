@@ -5,4 +5,5 @@
     <color name="colorAccent">#FFFFFF</color>
     <color name="bottomHour">#455a65</color>
     <color name="bottomDegree">#b3455a65</color>
+    <color name="small">#CCFFFFFF</color>
 </resources>

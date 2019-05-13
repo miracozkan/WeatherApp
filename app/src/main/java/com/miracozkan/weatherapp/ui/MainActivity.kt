@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         weatherViewModel.weather.observe(this, Observer { _list ->
-            when (_list[0].weather[0].icon) {
+            when (_list[0].weather[0].main) {
                 "Rain" -> {
                     imgTopIcon.setBackgroundResource(R.drawable.ic_iconfinder_weather_storm)
                 }
@@ -52,7 +52,11 @@ class MainActivity : AppCompatActivity() {
                 adapter = WeatherListAdapter(data)
                 layoutManager = LinearLayoutManager(this@MainActivity)
             }
-            Toast.makeText(this, _list[0].weather[0].description, Toast.LENGTH_SHORT).show()
         })
+
+        weatherViewModel.allData.observe(this, Observer { _allData ->
+            Toast.makeText(this, _allData.city.name, Toast.LENGTH_LONG).show()
+        })
+
     }
 }

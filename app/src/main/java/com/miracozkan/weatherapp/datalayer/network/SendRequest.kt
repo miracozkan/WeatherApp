@@ -28,7 +28,7 @@ object SendRequest {
             .create(WeatherService::class.java)
             .getWeatherByCityName(
                 apiVersion = "2.5",
-                cityName = "Ankara",
+                cityName = "Istanbul",
                 apiKey = "0974f2c3965545dad807a2dfeff5a73a"
             ).enqueue(object : Callback<WeatherResponseByCityName> {
                 override fun onResponse(
