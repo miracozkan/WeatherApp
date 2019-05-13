@@ -1,16 +1,18 @@
-package com.miracozkan.weatherapp.DTO
+package com.miracozkan.weatherapp
+
+import com.miracozkan.weatherapp.datalayer.repository.WeatherRepository
 
 
-// Code with ❤
+// Code with ❤️
 //┌─────────────────────────────┐
-//│ Created by Mirac OZKAN      │
+//│ Created by Gökhan ÖZTÜRK    │
 //│ ─────────────────────────── │
-//│ mirac.ozkan123@gmail.com    │            
+//│ GokhanOzturk@AndroidEdu.IO  │            
 //│ ─────────────────────────── │
-//│ 05/05/19 - 11:06            │
+//│ 2019-05-12 - 12:52          │
 //└─────────────────────────────┘
 
-data class CoordDTO(
-    val lat: String,
-    val lon: String
-)
+object DependencyUtil {
+
+    fun getWeatherRepository(): WeatherRepository = WeatherRepository()
+}

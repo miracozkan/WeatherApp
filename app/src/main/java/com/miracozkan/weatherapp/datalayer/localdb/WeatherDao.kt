@@ -1,4 +1,4 @@
-package com.miracozkan.weatherapp.DTO
+package com.miracozkan.weatherapp.datalayer.localdb
 
 
 // Code with ❤
@@ -7,16 +7,7 @@ package com.miracozkan.weatherapp.DTO
 //│ ─────────────────────────── │
 //│ mirac.ozkan123@gmail.com    │            
 //│ ─────────────────────────── │
-//│ 05/05/19 - 11:08            │
+//│ 12/05/19 - 10:35            │
 //└─────────────────────────────┘
 
-data class MainDTO(
-    val temp: String,
-    val temp_min: String,
-    val temp_max: String,
-    val pressure: String,
-    val sea_level: String,
-    val grnd_level: String,
-    val humidity: String,
-    val temp_kf: String
-)
+interface WeatherDao

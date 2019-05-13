@@ -4,20 +4,28 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.miracozkan.weatherapp"
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion version_min_sdk
+        targetSdkVersion version_compile_sdk
+        versionCode version_code
+        versionName version_name
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions 'dev'
+    productFlavors {
+        dev {
+            buildConfigField("String", "API_URL", '"https://api.openweathermap.org/data/"')
         }
     }
 }
@@ -34,6 +42,15 @@ dependencies {
 
     implementation 'com.android.support.constraint:constraint-layout:2.0.0-alpha5'
 
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation "android.arch.persistence.room:runtime:$rootProject.version_room"
+    kapt "android.arch.persistence.room:compiler:$rootProject.version_room"
+
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.version_retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.version_retrofit"
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    implementation 'com.android.support.constraint:constraint-layout:2.0.0-alpha5'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

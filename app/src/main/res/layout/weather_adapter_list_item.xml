@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp">
+
+    <TextView
+            android:id="@+id/txtHour"
+            style="@style/txtHour"
+            tools:text="04:00 PM"/>
+
+    <TextView
+            android:id="@+id/txtBotDegree"
+            tools:text="18°"
+            style="@style/txtBottomDegree"/>
+
+    <ImageView
+            style="@style/imgBottomIcon"
+            android:id="@+id/imgBotIcon"
+            tools:background="@drawable/ic_iconfinder_weather_showers_scattered"
+            android:contentDescription="@string/icon_of_weather"/>
+</LinearLayout>

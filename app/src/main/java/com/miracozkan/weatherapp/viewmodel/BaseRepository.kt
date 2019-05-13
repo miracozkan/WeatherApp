@@ -1,15 +1,14 @@
-package com.miracozkan.weatherapp.DTO
+package com.miracozkan.weatherapp.viewmodel
 
 
 // Code with ❤
 //┌─────────────────────────────┐
 //│ Created by Mirac OZKAN      │
 //│ ─────────────────────────── │
-//│ mirac.ozkan123@gmail.com    │            
+//│ mirac.ozkan123@gmail.com    │
 //│ ─────────────────────────── │
-//│ 05/05/19 - 11:17            │
+//│ 10/05/19 - 19:21            │
 //└─────────────────────────────┘
 
-data class SysDTO(
-    val pod: String
-)
+
+abstract class BaseRepository
